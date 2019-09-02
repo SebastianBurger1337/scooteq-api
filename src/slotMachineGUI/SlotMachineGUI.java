@@ -21,7 +21,7 @@ public class SlotMachineGUI
     private JProgressBar prgbarCheatUnlocker;
     private JSeparator sepCheats, sepStats, sepStats2, sepStatus;
     private JToggleButton tgglSound;
-    private int credits = 100, boughtCredits = 100, bet = 15, matchThree, matchTwo, win, lost;
+    private int credits = 200, boughtCredits = 100, bet = 15, matchThree, matchTwo, win, lost;
     private double payout = 25.0, creditBuyout = 10.0, funds;
     private int reel1 = 7, reel2 = 7, reel3 = 7; // starting values of the reels.
     private ArrayList<ImageIcon> images = new ArrayList<ImageIcon>();
