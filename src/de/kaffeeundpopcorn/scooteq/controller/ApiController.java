@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -29,6 +30,11 @@ public class ApiController
         logger.debug("LOGGING STARTED");
     }
 
+    public static void hi()
+    {
+        System.out.println("hi");
+    }
+
     @Autowired
     private DatabaseService databaseService;
 
@@ -40,11 +46,24 @@ public class ApiController
      */
     @GetMapping("/health")
     public @ResponseBody
-    ResponseEntity<String> health()
+    RedirectView health()
     {
-        return ResponseEntity.ok().build();
+        hi();
+        return new RedirectView("https://http.cat/200.jpg");
     }
 
+    // TODO: Add rental post and get
+    @PostMapping("/rental")
+    public @ResponseBody ResponseEntity<String> postRental()
+    {
+        return ResponseEntity.notFound().build();
+    }
 
+    // TODO: Add customer post and get
+    @PostMapping("/customer")
+    public @ResponseBody ResponseEntity<String> postCustomer()
+    {
+        return null;
+    }
 
 }

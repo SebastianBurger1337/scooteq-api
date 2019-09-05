@@ -1,2 +1,5 @@
-# slot-machine
-Slot Machine "Game" developed for educational purposes.
+# Scooteq REST-API
+
+IT8L - Marco, Kevin, and Sebastian
+
+Example Spring Boot REST API implementation
