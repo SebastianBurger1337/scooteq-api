@@ -30,11 +30,6 @@ public class ApiController
         logger.debug("LOGGING STARTED");
     }
 
-    public static void hi()
-    {
-        System.out.println("hi");
-    }
-
     @Autowired
     private DatabaseService databaseService;
 
@@ -48,7 +43,6 @@ public class ApiController
     public @ResponseBody
     RedirectView health()
     {
-        hi();
         return new RedirectView("https://http.cat/200.jpg");
     }
 
