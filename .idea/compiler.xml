@@ -10,6 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+<<<<<<< HEAD
       <module name="slot-machine" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -18,4 +19,9 @@
       <module name="slot-machine" options="-parameters" />
     </option>
   </component>
+=======
+      <module name="slot-machine" target="6" />
+    </bytecodeTargetLevel>
+  </component>
+>>>>>>> master
 </project>
