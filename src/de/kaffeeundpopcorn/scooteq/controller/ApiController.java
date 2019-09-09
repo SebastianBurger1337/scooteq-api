@@ -23,13 +23,6 @@ import java.io.IOException;
 public class ApiController
 {
 
-    private static final Logger logger = LoggerFactory.getLogger(ApiController.class);
-
-    static
-    {
-        logger.debug("LOGGING STARTED");
-    }
-
     @Autowired
     private DatabaseService databaseService;
 
@@ -39,25 +32,11 @@ public class ApiController
      * @return A ResponseEntity with Status OK
      * FIXME: Doesn't actually do a health check :)
      */
-    @GetMapping("/health")
+    @GetMapping("/v1/health")
     public @ResponseBody
     RedirectView health()
     {
         return new RedirectView("https://http.cat/200.jpg");
-    }
-
-    // TODO: Add rental post and get
-    @PostMapping("/rental")
-    public @ResponseBody ResponseEntity<String> postRental()
-    {
-        return ResponseEntity.notFound().build();
-    }
-
-    // TODO: Add customer post and get
-    @PostMapping("/customer")
-    public @ResponseBody ResponseEntity<String> postCustomer()
-    {
-        return null;
     }
 
 }
