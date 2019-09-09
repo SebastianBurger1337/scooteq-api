@@ -1,5 +1,7 @@
 package slotMachineGUI;
 
+import org.apache.log4j.*;
+
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -12,7 +14,7 @@ import java.awt.event.ActionListener;
 
 public class SlotMachineGUI
 {
-
+    private static Logger logger = Logger.getLogger(SlotMachineGUI.class.getName());
     private JButton btnCash, btnSpin;
     private JCheckBox cbAlwaysWin, cbSuperJackpot, cbTrollface;
     private JFrame frmFrame;
@@ -27,6 +29,7 @@ public class SlotMachineGUI
     private ArrayList<ImageIcon> images = new ArrayList<ImageIcon>();
     private DecimalFormat df = new DecimalFormat("0.00");
 
+
     public SlotMachineGUI(int credits, int boughtCredits, int bet, double payout, double creditBuyout, int reel1, int reel2, int reel3)
     {
         this.credits = credits;
@@ -37,6 +40,7 @@ public class SlotMachineGUI
         this.reel1 = reel1;
         this.reel2 = reel2;
         this.reel3 = reel3;
+
         createForm();
         loadImages();
         addFields();
@@ -63,6 +67,12 @@ public class SlotMachineGUI
     private void createForm()
     {
 
+        logger.debug( "Meine Debug-Meldung" );
+        logger.info(  "Meine Info-Meldung"  );
+        logger.warn(  "Meine Warn-Meldung"  );
+        logger.error( "Meine Error-Meldung" );
+        logger.fatal( "Meine Fatal-Meldung" );
+        logger.fatal("Start Aplication");
         frmFrame = new JFrame();
         frmFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frmFrame.setTitle("Warner Slots");
