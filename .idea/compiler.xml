@@ -6,22 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="slot-machine" />
+        <module name="scooteq-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-<<<<<<< HEAD
-      <module name="slot-machine" target="1.8" />
+      <module name="scooteq-api" target="6" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="slot-machine" options="-parameters" />
+      <module name="scooteq-api" options="-parameters" />
     </option>
   </component>
-=======
-      <module name="slot-machine" target="6" />
-    </bytecodeTargetLevel>
-  </component>
->>>>>>> master
 </project>
