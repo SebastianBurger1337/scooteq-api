@@ -12,25 +12,15 @@ public class Scooter
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
+    @ID
+    private int modelId
 
-    private String firstName;
+    private int metersDriven;
+    private vchar color
+    private Date acquisition
+    
 
-    private String lastName;
-
-    private int customerStatusId;
-
-    private boolean driversLicense;
-
-    private String address;
-
-    private String city;
-
-    private String postalCode;
-
-    private String country;
-
-    private Date birthDate;
 
 
 
