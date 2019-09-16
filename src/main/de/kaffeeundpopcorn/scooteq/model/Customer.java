@@ -10,10 +10,11 @@ import java.util.Date;
 @EntityListeners(AuditingEntityListener.class)
 public class Customer
 {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CustomerId", nullable = false)
-    private Long CustomerId;
+    private int CustomerId;
 
     @Column(name = "FirstName")
     private String firstName;
@@ -43,12 +44,12 @@ public class Customer
     private Date birthDate;
 
     //region Getters and setters
-    public Long getCustomerId()
+    public int getCustomerId()
     {
         return CustomerId;
     }
 
-    public void setCustomerId(Long customerId)
+    public void setCustomerId(int customerId)
     {
         this.CustomerId = customerId;
     }
