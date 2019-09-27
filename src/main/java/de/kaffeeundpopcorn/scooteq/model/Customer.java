@@ -14,7 +14,7 @@ public class Customer
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CustomerId", nullable = false)
-    private int CustomerId;
+    private Long customerId;
 
     @Column(name = "FirstName")
     private String firstName;
@@ -44,14 +44,14 @@ public class Customer
     private Date birthDate;
 
     //region Getters and setters
-    public int getCustomerId()
+    public Long getCustomerId()
     {
-        return CustomerId;
+        return customerId;
     }
 
-    public void setCustomerId(int customerId)
+    public void setCustomerId(Long customerId)
     {
-        this.CustomerId = customerId;
+        this.customerId = customerId;
     }
 
     public String getFirstName()
