@@ -22,7 +22,6 @@ public class ScooteqAPI extends SpringBootServletInitializer
 
         LOGGER.info("Booting Application");
         SpringApplication.run(ScooteqAPI.class, args);
-        LOGGER.info("Simple log statement with inputs {}, {} and {}", 1, 2, 3);
     }
 
     @Override

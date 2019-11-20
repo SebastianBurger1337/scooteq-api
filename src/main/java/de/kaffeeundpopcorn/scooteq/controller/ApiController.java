@@ -2,22 +2,15 @@ package de.kaffeeundpopcorn.scooteq.controller;
 
 import de.kaffeeundpopcorn.scooteq.model.Customer;
 import de.kaffeeundpopcorn.scooteq.repository.CustomerRepository;
-import de.kaffeeundpopcorn.scooteq.service.DatabaseService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
 import org.springframework.data.crossstore.ChangeSetPersister;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.io.IOException;
+
+import static de.kaffeeundpopcorn.scooteq.ScooteqAPI.LOGGER;
 
 /**
  * @author Sebastian Burger
@@ -48,7 +41,7 @@ public class ApiController
     public @ResponseBody
     ResponseEntity<Customer> getCustomer(@PathVariable(value = "customerId") Long customerID) throws ChangeSetPersister.NotFoundException
     {
-        System.out.println("Searching for customer " + customerID);
+        LOGGER.info("Searching for customer " + customerID);
         Customer customer = customerRepository.findById(customerID).orElseThrow(ChangeSetPersister.NotFoundException::new);
         return ResponseEntity.ok().body(customer);
     }
