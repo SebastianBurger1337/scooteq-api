@@ -1,4 +1,4 @@
-package de.kaffeeundpopcorn.scooteq.model;
+package de.kaffeeundpopcorn.scooteqapi.model;
 
 import lombok.Getter;
 import lombok.Setter;

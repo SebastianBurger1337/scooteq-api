@@ -1,8 +1,7 @@
-package de.kaffeeundpopcorn.scooteq.model;
+package de.kaffeeundpopcorn.scooteqapi.model;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
-import java.util.Date;
 
 /**
  * Class representing a rental, used for purposes of serialization.

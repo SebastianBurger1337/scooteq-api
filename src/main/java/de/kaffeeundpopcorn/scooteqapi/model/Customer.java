@@ -1,6 +1,5 @@
-package de.kaffeeundpopcorn.scooteq.model;
+package de.kaffeeundpopcorn.scooteqapi.model;
 
-import de.kaffeeundpopcorn.scooteq.ScooteqAPI;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -47,7 +46,6 @@ public class Customer
     //region Getters and setters
     public Long getCustomerId()
     {
-        ScooteqAPI.LOGGER.info("return customer");
         return customerId;
     }
 

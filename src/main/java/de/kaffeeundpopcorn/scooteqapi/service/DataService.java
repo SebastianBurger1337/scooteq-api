@@ -1,4 +1,4 @@
-package de.kaffeeundpopcorn.scooteq.service;
+package de.kaffeeundpopcorn.scooteqapi.service;
 
 /**
  * Class responsible for handling serialization of

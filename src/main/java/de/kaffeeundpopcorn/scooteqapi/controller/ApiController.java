@@ -1,16 +1,22 @@
-package de.kaffeeundpopcorn.scooteq.controller;
+package de.kaffeeundpopcorn.scooteqapi.controller;
 
-import de.kaffeeundpopcorn.scooteq.model.Customer;
-import de.kaffeeundpopcorn.scooteq.repository.CustomerRepository;
+import de.kaffeeundpopcorn.scooteqapi.model.Customer;
+import de.kaffeeundpopcorn.scooteqapi.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
-import static de.kaffeeundpopcorn.scooteq.ScooteqAPI.LOGGER;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+
+import static de.kaffeeundpopcorn.scooteqapi.ScooteqAPI.LOGGER;
 
 /**
  * @author Sebastian Burger
@@ -21,8 +27,12 @@ import static de.kaffeeundpopcorn.scooteq.ScooteqAPI.LOGGER;
 public class ApiController
 {
 
-    @Autowired
-    private CustomerRepository customerRepository;
+    private final CustomerRepository customerRepository;
+
+    public ApiController(CustomerRepository customerRepository, ServletContext servletContext)
+    {
+        this.customerRepository = customerRepository;
+    }
 
     /**
      * GET Mapping for /health
@@ -32,9 +42,9 @@ public class ApiController
      */
     @GetMapping("/v1/health")
     public @ResponseBody
-    RedirectView health()
+    ResponseEntity health(HttpServletResponse response) throws IOException
     {
-        return new RedirectView("https://http.cat/200.jpg");
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/v1/customer/{customerId}")
